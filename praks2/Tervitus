@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+#kasutaja tervitus
+#
+#skripti algus
+#
+#echo "Tere User!"
+echo -n "Tere"
+echo -n 'whoami | cut-f1 -d"." | cut-c1 | tr [:lower:][:upper:]'
+echo -n 'whoami | cut-f1 -d"." | cut-c2-'
+echo "!"
+#
+# skripti lopp
