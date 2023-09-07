@@ -1,0 +1,20 @@
+#!/bin/bash
+# see skript väljastab kuupäeva ja ajaga seotud informatsiooni.
+#
+#
+# skripti algus
+#
+# kuupäeva ja kellaaja väljastamine
+current_date=$(date +"%Y-%m-%d")
+current_time=$(date +"%H:%M:%S")
+echo "Today is $current_date."
+echo "Time is  $current_time."
+#
+#
+long_date=$(date +"%B %Y")
+echo -n "Callendar of "
+echo "$long_date"
+cal | tail -n 7
+#
+#
+# skripti lopp
