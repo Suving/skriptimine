@@ -1,0 +1,17 @@
+#!/bin/bash
+# See skript otsib .log lõpuga failid /var/log/ kataloogist, loeb ridade arvu ja väljastab need kahanemisjärjekorras.
+#
+# skripti algus
+#
+# Määra kataloog, kust .log failid otsitakse
+log_directory="/var/log/"
+#
+# Otsi .log failid ja loe ridade arv
+file_list=$(find "$log_directory" -type f -name "*.log" -exec wc -l {} + | sort -rn)
+#
+# Väljastada failide nimekiri
+echo "Failide nimekiri kahanemisjärjekorras ridade arvu järgi:"
+echo "$file_list"
+#
+#
+# skripti l6pp
