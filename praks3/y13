@@ -1,0 +1,15 @@
+#!/bin/bash
+# See skript väljastab masina nime ja serveri tööajaga seotud info.
+#
+# skripti algus
+#
+# Väljasta masina nimi
+machine_name=$(hostname)
+#
+# Väljasta serveri tööaeg
+uptime_info=$(uptime -p)
+#
+# Väljasta masina nimi ja tööaeg kujul "masin nimi up X days"
+echo "$machine_name $uptime_info"
+#
+# skripti l6pp
