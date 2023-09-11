@@ -1,0 +1,35 @@
+#!/bin/bash
+#
+# see skript loob kataloogi test backup'i jaoks ja teostab backup'i.
+#
+# loome testi kataloogi ja selle all olevad failid ja kataloogid
+#
+# skripti algus
+#
+mkdir -p ./test/
+touch ./test/file1.txt
+echo "See on fail 1" > ./test/file1.txt
+touch ./test/file2.txt
+echo "See on fail 2" > ./test/file2.txt
+touch ./test/file3.txt
+echo "See on fail 3" > ./test/file3.txt
+touch ./test/file4.txt
+echo "See on fail 4" > ./test/file4.txt
+mkdir -p ./test/kataloog1/
+touch ./test/kataloog1/fail5.txt
+echo "See on kataloogi 1 fail" > ./test/kataloog1/fail5.txt
+mkdir -p ./test/kataloog2/
+touch ./test/kataloog2/fail6.txt
+echo "See on kataloogi 2 fail" > ./test/kataloog2/fail6.txt
+#
+# loome backup kataloogi
+#
+mkdir -p ./backup/
+#
+# tehame backup
+#
+tar -czf ./backup/test.backup.tar.gz ./test/
+#
+echo "Kataloogi './test/' varundamine on lõpetatud. Backup fail on './backup/test.backup.tar.gz'."
+#
+# skripti l6pp
