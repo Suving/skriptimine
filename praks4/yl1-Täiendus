@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# See skript küsib kasutajalt ees- ja perenime ning tervitab teda.
+#
+# küsib kasutajalt eesnime ja perenime ning salvestab need muutujatesse
+#
+# skripti algus
+#
+echo -n "Sisesta oma ees- ja perenimi: "
+read eesnimi perenimi
+#
+# Väljasta tervitus koos kasutaja nimedega
+#
+echo "Sinu eesnimi on $eesnimi ja perenimi on $perenimi"
+#
+# skripti l6pp
