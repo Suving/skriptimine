@@ -1,0 +1,24 @@
+#!/bin/bash
+# see skript arvutab ja väljastab ühe nädala eeldatava ajakulu ümardatuna ülespoole täisarvuni.
+#
+# küsi kasutajalt ainepunktide arvu
+#
+# skripti algus
+#
+echo -n "Sisestage ainetepunktide arv: "
+read ainepunktid
+#
+# süsi kasutajalt nädalate arvu
+#
+echo -n "Sisestage nädalate arv: "
+read nadalad
+#
+# arvuta eeldatav ajakulu
+#
+ajakulu=$(echo "scale=2; (($ainepunktid * 26) / $nadalad)" | bc)
+umardatud_ajakulu=$(echo "$ajakulu+0.5" | bc | cut -d'.' -f1)
+#
+# Väljasta ümardatud ajakulu
+echo "Ühe nädala eeldatav ajakulu on $umardatud_ajakulu tundi."
+#
+# skripti l6pp
