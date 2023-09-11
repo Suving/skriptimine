@@ -1,0 +1,16 @@
+#!/bin/bash
+# see skript loob ja väljastab presidendiga seotud lause.
+#
+# muutujad
+#
+# skripti algus
+#
+aasta=2021
+president="Alar Karis"
+lause_keskosa=". aastal valiti Eesti presidendiks"
+lause="$aasta$lause_keskosa $president"
+#
+# väljastamine
+echo "$lause"
+#
+# skripti l6pp
