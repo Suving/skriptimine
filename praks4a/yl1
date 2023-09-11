@@ -1,0 +1,28 @@
+#!/bin/bash
+# see skript küsib kasutajalt nime, tervitab teda ja arvutab vanuse.
+#
+# küsi kasutajalt nimi
+#
+# skripti algus
+#
+echo -n "Sisesta oma nimi: "
+read nimi
+#
+# tervita kasutajat
+#
+echo "Tere tulemast, $nimi!"
+#
+# küsi kasutajalt sünniaasta
+echo -n "Sisesta oma sünniaasta: "
+read synniaasta
+#
+# arvuta vanus
+#
+aasta=$(date +"%Y")
+vanus=$((aasta - synniaasta))
+#
+# väljasta vanus
+#
+echo "$nimi, sina oled $vanus aasta vana."
+#
+# skripti l6pp
