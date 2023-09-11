@@ -1,0 +1,24 @@
+#!/bin/bash
+# see skript küsib kasutajalt kataloogi nime, tervitab teda ja teostab backup'i.
+#
+# küsi kasutajalt kataloogi nimi
+#
+# skripti algus
+#
+echo -n "Sisesta kataloogi nimi: "
+read katalooginimi
+#
+# loome backup kataloogi
+#
+backupkataloog="./backup/"
+mkdir -p "$backupkataloog"
+#
+# tehame backup
+#
+backupfailinimi="${katalooginimi##*/}.backup.tar.gz"
+tar -czf "$backupkataloog$backupfailinimi" "$katalooginimi"
+#
+echo "Kataloogi '$katalooginimi' varundamine on lõpetatud."
+echo "Backup fail on '$backupfailinimi' ja ta asub '$backupkataloog' kataloogis."
+#
+# skripti l6pp
