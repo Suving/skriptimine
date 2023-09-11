@@ -1,0 +1,29 @@
+#!/bin/bash
+# see skript aitab arvutada, mitu inimest on täielikult täitnud bussi ja mitu on maha jäänud.
+#
+# küsi kasutajalt reisijate arvu grupis
+#
+# skripti algus
+#
+echo -n "Sisestage reisijate arv grupis: "
+read reisijad
+#
+# küsi kasutajalt bussi kohtade arvu
+#
+echo -n "Sisestage bussi kohtade arv: "
+read kohad
+#
+# arvuta täielikult täidetud busside arv
+#
+taisbussid=$((reisijad / kohad))
+#
+# arvuta maha jäänud reisijate arv
+#
+mahajaanud=$((reisijad % kohad))
+#
+# väljasta tulemused
+#
+echo "Täielikult täidetud busse: $taisbussid"
+echo "Maha jäänud reisijaid: $mahajaanud"
+#
+# skript l6pp
