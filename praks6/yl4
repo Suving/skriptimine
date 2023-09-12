@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# kontrollime, kas skriptile anti täpselt üks parameeter (täisarv)
+#
+# skripti algus
+#
+if [ $# -eq 1 ] && [ "$1" -eq "$1" ] 2>/dev/null; then
+    arv=$1
+    if [ $((arv % 2)) -eq 0 ]; then
+        echo "Antud arv on paaris."
+    else
+        echo "Antud arv on paaritu."
+    fi
+else
+    echo "Kasutamine: $0 <täisarv>"
+    echo "Palun sisestage täpselt üks täisarv arvu paarsuse kontrollimiseks."
+fi
+#
+# skripti l6pp
