@@ -1,0 +1,24 @@
+#!/bin/bash
+# see skript küsib kasutajalt täisnurkse kolmnurga küljed ja arvutab hüpotenuusi.
+#
+# küsi kasutajalt külje A väärtus
+#
+# skripti algus
+#
+echo -n "Sisesta A külje väärtus: "
+read kylgA
+#
+# küsi kasutajalt külje B väärtus
+#
+echo -n "Sisesta B külje väärtus: "
+read kylgB
+#
+# arvuta hüpotenuus
+#
+hupotenuus=$(echo "scale=2; sqrt($kylgA^2 + $kylgB^2)" | bc)
+#
+# väljasta tulemus
+#
+echo "C = $hupotenuus"
+#
+# skripti l6pp
