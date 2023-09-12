@@ -1,0 +1,32 @@
+#!/bin/bash
+# see skript küsib kasutajalt reisi alguspäeva numbri ja majutuse kestuse ning arvutab tagasipöördumise päeva.
+#
+# küsi kasutajalt reisi alguspäeva number (0 - pühapäev, 1 - esmaspäev, ..., 6 - laupäev)
+#
+# skripti algus
+#
+echo -n "Sisesta millal sõidad ära (0 - pühapäev, 1 - esmaspäev, ..., 6 - laupäev): "
+read alguspaev
+#
+# Küsi kasutajalt majutuse kestus öödes
+#
+echo -n "Sisesta reisi ööpäevade arv: "
+read majutus
+#
+# arvuta tagasipöördumise päev (kasutades jäägist ja nädalapäevade arvu)
+#
+tagasipoordepaeval=$((($alguspaev + $majutus) % 7))
+#
+# väljasta tulemus, teisendades numbrit nädalapäevaks
+#
+case $tagasipoordepaeval in
+    0) echo "Tagasi oled pühapäeval";;
+    1) echo "Tagasi oled esmaspäeval";;
+    2) echo "Tagasi oled teisipäeval";;
+    3) echo "Tagasi oled kolmapäeval";;
+    4) echo "Tagasi oled neljapäeval";;
+    5) echo "Tagasi oled reedel";;
+    6) echo "Tagasi oled laupäeval";;
+esac
+#
+# skripti l6pp
