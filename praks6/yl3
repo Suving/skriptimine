@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# skripti algus
+#
+osch=0
+#
+echo "1. Unix (Sun Os)"
+echo "2. Linux (Red Hat)"
+#
+# küsime kasutajalt operatsioonisüsteemi valikut
+#
+echo -n "Select your OS choice [1 or 2]? "
+read osch
+#
+# kontrollime kasutaja valikut "if" lausega
+#
+if [ $osch -eq 1 ] ; then
+     echo "You Pick up Unix (Sun Os)"
+else # Kui kasutaja ei valinud 1, siis kontrollime järgmise tingimuse
+       if [ $osch -eq 2 ] ; then
+             echo "You Pick up Linux (Red Hat)"
+       else
+             echo "What you don't like Unix/Linux OS."
+       fi
+fi
+#
+# skripti l6pp
