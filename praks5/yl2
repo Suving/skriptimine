@@ -1,0 +1,33 @@
+#!/bin/bash
+# see skript küsib kasutajalt kolmnurga külgede väärtused ja arvutab pindala Heroni valemiga.
+#
+# küsi kasutajalt külje A väärtus
+#
+# skripti algus
+#
+echo -n "Sisesta külje A väärtus: "
+read kylgA
+#
+# küsi kasutajalt külje B väärtus
+#
+echo -n "Sisesta külje B väärtus: "
+read kylgB
+#
+# küsi kasutajalt külje C väärtus
+#
+echo -n "Sisesta külje C väärtus: "
+read kylgC
+#
+# arvuta poolümbermõõt
+#
+poolymbermoet=$(echo "scale=2; ($kylgA + $kylgB + $kylgC) / 2" | bc)
+#
+# arvuta pindala Heroni valemiga
+#
+pindala=$(echo "scale=2; sqrt($poolymbermoet * ($poolymbermoet - $kylgA) * ($poolymbermoet - $kylgB) * ($poolymbermoet - $kylgC))" | bc)
+#
+# väljasta tulemus
+#
+echo "Kolmnurga pindala on $pindala"
+#
+# skripti l6pp
