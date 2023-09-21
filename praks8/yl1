@@ -1,0 +1,14 @@
+#!/bin/bash
+# See skript arvutab 10 esimese paarisarvu summa.
+#
+# skripti algus
+#
+sum=0  # Initsialiseeri summa muutuja nulliga
+
+for ((i = 2; i <= 20; i += 2)); do
+    sum=$((sum + i))
+done
+
+echo "Arvude vahemikus 1 kuni 10 (kaasaarvutud) paarisarvude summa on: $sum"
+#
+# skripti l6pp
