@@ -1,0 +1,27 @@
+#!/bin/bash
+# See skript tervitab kasutajat vastavalt kellaajale ja kasutaja nimele.
+#
+# skripti algus
+#
+kellaaeg=$(date +%H)  # Loeme automaatselt süsteemi kellaaja tunnid.
+
+echo -n "Sisesta oma nimi: "
+read nimi
+
+if ((kellaaeg >= 6 && kellaaeg < 12)); then
+    tervitus="Tere hommikust"
+
+elif ((kellaaeg >= 12 && kellaaeg < 18)); then
+    tervitus="Tere päevast"
+
+elif ((kellaaeg >= 18 && kellaaeg < 22)); then
+    tervitus="Tere õhtust"
+
+else
+    tervitus="Head ööd"
+
+fi
+
+echo "$tervitus, $nimi!"
+#
+# skripti l6pp
