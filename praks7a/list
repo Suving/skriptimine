@@ -1,0 +1,33 @@
+#!/bin/bash
+# See skript küsib kasutajalt kataloogi nime ja vaatab selle kataloogi sisu ning loeb kokku, mitu faili, kataloogi ja linki selles kataloogis on.
+
+# Küsi kasutajalt kataloogi nimi
+echo -n "Sisesta kataloogi nimi: "
+read kataloogi_nimi
+
+# Kontrolli, kas kataloog eksisteerib
+if [ -d "$kataloogi_nimi" ]; then
+    # Initsialiseeri muutujad failide, kataloogide ja linkide loendamiseks
+    failide_arv=0
+    kataloogide_arv=0
+    linkide_arv=0
+
+    # Loop, mis vaatab kataloogi sisu
+    for element in "$kataloogi_nimi"/*; do
+        if [ -f "$element" ]; then
+            echo "$element on fail"
+            ((failide_arv++))
+        elif [ -d "$element" ]; then
+            echo "$element on kataloog"
+            ((kataloogide_arv++))
+        elif [ -L "$element" ]; then
+            echo "$element on link"
+            ((linkide_arv++))
+        fi
+    done
+
+    # Väljasta tulemused
+    echo "Kataloogis \"$kataloogi_nimi\" on $failide_arv faili, $kataloogide_arv kataloogi ja $linkide_arv linki."
+else
+    echo "Kataloogi \"$kataloogi_nimi\" ei leitud."
+fi
