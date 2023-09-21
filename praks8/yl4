@@ -1,0 +1,31 @@
+#!/bin/bash
+# See skript lubab kasutajal sisestada suvalise arvu ja kontrollib, kas see on algarv või mitte.
+#
+# skripti algus
+#
+echo -n "Sisesta suvaline arv: "
+read arv
+
+# Kontrollime, et arv oleks positiivne ja suurem kui 1
+if [ "$arv" -le 1 ]; then
+    echo "$arv - ei ole algarv"
+else
+    jagaja=2
+    algarv=true
+
+    while [ $jagaja -lt $arv ]; do
+        if [ $((arv % jagaja)) -eq 0 ]; then
+            algarv=false
+            break
+        fi
+        jagaja=$((jagaja + 1))
+    done
+
+    if $algarv; then
+        echo "$arv - on algarv"
+    else
+        echo "$arv - ei ole algarv"
+    fi
+fi
+#
+# skripti l6pp
