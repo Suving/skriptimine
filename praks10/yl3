@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# skripti algus
+
+# Küsime kasutajalt tunni väärtust
+read -p "Sisesta aja väärtus (tundide arv): " tund
+
+# Kontrollime tundi ja väljastame vastava tervituse
+if ((tund >= 6)) && ((tund < 12)); then
+    echo "Tere hommikust"
+elif ((tund >= 12)) && ((tund < 18)); then
+    echo "Tere päevast"
+elif ((tund >= 18)) && ((tund < 22)); then
+    echo "Tere õhtust"
+elif ((tund >= 22)) || ((tund < 6)); then
+    echo "Head ööd!"
+else
+    echo "Vigane sisend, palun sisesta tundide arv vahemikus 0 kuni 23."
+fi
+
+# skripti l6pp
