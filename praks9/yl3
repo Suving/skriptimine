@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# skripti algus
+
+# Küsime kasutajalt ridade arvu ja tarnide arvu reas
+read -p "Sisesta ridade arv: " reades
+read -p "Sisesta tarnide arv reas: " symbols
+
+# Väljastame tähekujundi
+for ((i = 1; i <= reades; i++))
+do
+  if ((i == 1)) || ((i == reades)) ; then
+    for ((j = 1; j <= symbols; j++))
+    do
+      echo -n "* "
+    done
+  else
+    echo -n "* "
+    for ((j = 2; j < symbols; j++))
+    do
+      echo -n "  "
+    done
+    echo -n "* "
+  fi
+  echo
+done
+
+# skripti l6pp
