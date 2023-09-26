@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# skripti algus
+
+# Loeme süsteemi kellaaega
+tund=$(date +%H)
+
+# Loeme kasutaja nime, kes on süsteemi sisse logitud
+kasutaja=$(whoami)
+
+# Kontrollime tundi ja väljastame vastava tervituse
+if ((tund >= 6)) && ((tund < 12)); then
+    echo "Tere hommikust, $kasutaja!"
+elif ((tund >= 12)) && ((tund < 18)); then
+    echo "Tere päevast, $kasutaja!"
+elif ((tund >= 18)) && ((tund < 22)); then
+    echo "Tere õhtust, $kasutaja!"
+elif ((tund >= 22)) || ((tund < 6)); then
+    echo "Head ööd, $kasutaja!"
+else
+    echo "Vigane sisend, palun sisesta tundide arv vahemikus 0 kuni 23."
+fi
+
+# skripti l6pp
