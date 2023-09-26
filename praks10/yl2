@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# skripti algus
+
+# Küsime kasutajalt kuu numbrit
+read -p "Sisesta kuu number: " kuu
+
+# Kontrollime kuu numbrit ja väljastame vastava aastaaja
+case $kuu in
+  1|2|12)
+    echo "Praegu on talv"
+    ;;
+  3|4|5)
+    echo "Praegu on kevad"
+    ;;
+  6|7|8)
+    echo "Praegu on suvi"
+    ;;
+  9|10|11)
+    echo "Praegu on sügis"
+    ;;
+  *)
+    echo "Vigane sisend, palun sisesta kuu number vahemikus 1 kuni 12."
+    ;;
+esac
+
+# skripti l6pp
