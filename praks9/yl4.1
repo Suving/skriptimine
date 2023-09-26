@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# skripti algus
+
+# Küsime kasutajalt ridade arvu
+read -p "Sisesta ridade arv: " reades
+
+# Väljastame tähekujundi
+for ((i = reades; i >= 1; i--))
+do
+  for ((j = 1; j <= i; j++))
+  do
+    echo -n "* "
+  done
+  echo
+done
+
+# skripti l6pp
